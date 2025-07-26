@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workline Bioinformatics | FAQs</title>
+  <link rel="stylesheet" href="style_final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .faq-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+
+    .faq-container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+
+    .faq-accordion {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .faq-item input {
+      display: none;
+    }
+
+    .faq-item label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary);
+      background-color: #f9f9f9;
+      transition: background 0.3s ease;
+    }
+
+    .faq-item label:hover {
+      background-color: var(--accent);
+    }
+
+    .faq-item label i {
+      transition: transform 0.3s;
+    }
+
+    .faq-item input:checked + label i {
+      transform: rotate(90deg);
+    }
+
+    .faq-item .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      background: #fff;
+      transition: max-height 0.4s ease;
+      padding: 0 1.5rem;
+    }
+
+    .faq-item input:checked ~ .faq-content {
+      max-height: 300px;
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    .faq-item .faq-content p {
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .faq-container h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+  <div class="nav-flex">
+    <a href="index.html" class="logo">
+      <img src="images/logo_transparent_1.png" alt="Workline Bioinformatics Logo">
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- FAQs Section -->
+  <div class="full-width-section faq-bg">
+    <section class="faq-container animate">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-accordion">
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq1">
+          <label for="faq1">What kind of data do you work with? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>We support RNA-seq, DNA methylation, WGS, proteomics, metabolomics, and microarray data from multiple organisms.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq2">
+          <label for="faq2">Do you offer custom analysis pipelines? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Yes! Each project is tailored to your research goals, platform, and analysis needs. We also offer consultations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq3">
+          <label for="faq3">Are your tutorials free to access? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>We offer both free and premium-level tutorials depending on the depth of the content and features included.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq4">
+          <label for="faq4">Can I collaborate long-term with your team? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Absolutely! We offer ongoing collaborations for academic labs, biotech startups, and pharmaceutical companies.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq5">
+          <label for="faq5">Do you provide manuscript figure design help? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Yes, we design journal-quality visualizations, graphs, interaction maps, and offer revisions based on your journal guidelines.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq6">
+          <label for="faq6">What is the usual turnaround time for projects? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Most projects are completed within 5–10 business days depending on complexity and data volume.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq7">
+          <label for="faq7">Do you offer academic project support for students? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Yes, we assist students with analysis, pipelines, and even offer guidance for writing results and methods sections.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq8">
+          <label for="faq8">Can you help integrate multi-omics datasets? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Yes, we specialize in integrative omics analysis using machine learning, correlation mapping, and pathway-based approaches.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq9">
+          <label for="faq9">Is there support after the project is delivered? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>All clients get a 1-week free revision period after project delivery. Extended support plans are available.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <input type="checkbox" id="faq10">
+          <label for="faq10">Do you help write or revise grant proposals? <i class="fas fa-chevron-right"></i></label>
+          <div class="faq-content">
+            <p>Yes, we assist with data justification, methodology planning, and preliminary result generation for grants and fellowships.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-grid">
+    <div class="footer-column left">
+      <h2>Workline Bioinformatics</h2>
+      <p>123 Science Park Road<br>Bio City, Genomia 54321<br>03269411291</p>
+    </div>
+    <div class="footer-column center">
+      <ul>
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#features">Services</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-column right">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a><br>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Workline Bioinformatics | Empowering Science with Data</p>
+  </div>
+
+</body>
+</html>
+

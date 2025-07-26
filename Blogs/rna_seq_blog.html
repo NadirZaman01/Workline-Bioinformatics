@@ -1,0 +1,187 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding RNA-Seq | Workline Bioinformatics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      background: #f9f9fb;
+      color: #222;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .blog-header h1 {
+      font-size: 2.6em;
+      margin-bottom: 10px;
+      color: #1b1f31;
+    }
+
+    .blog-meta {
+      font-size: 0.95em;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .blog-image {
+      width: 100%;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+
+    .blog-content h2 {
+      color: #1e3a8a;
+      margin-top: 35px;
+      margin-bottom: 15px;
+    }
+
+    .blog-content p {
+      margin-bottom: 20px;
+      font-size: 1.05em;
+    }
+
+    .highlight {
+      background: #e0f2fe;
+      padding: 10px 16px;
+      border-left: 4px solid #0284c7;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bottom-links a {
+      text-decoration: none;
+      color: #0284c7;
+      font-weight: 600;
+      border: 1px solid #0284c7;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .bottom-links a:hover {
+      background-color: #0284c7;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      .blog-header h1 {
+        font-size: 2em;
+      }
+
+      .bottom-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="blog-header">
+      <h1>Understanding RNA-Seq</h1>
+      <div class="blog-meta">By Workline Bioinformatics | July 25, 2025</div>
+    </div>
+
+    <img src="images/blog_bg.png" alt="RNA-Seq Visualization" class="blog-image" />
+
+    <div class="blog-content">
+      <p>
+        RNA sequencing (RNA-Seq) has transformed how researchers study transcriptomes. It provides a quantitative and qualitative view of all RNA molecules within a cell at a given time. Unlike microarrays, RNA-Seq does not require prior knowledge of the genome, enabling unbiased discovery of novel transcripts, splice variants, and gene fusions.
+      </p>
+
+      <h2>What is RNA-Seq?</h2>
+      <p>
+        RNA-Seq is a next-generation sequencing (NGS) technology that sequences complementary DNA (cDNA) derived from RNA molecules. It allows researchers to capture the dynamic nature of transcriptomes, offering high-resolution insights into gene expression patterns.
+      </p>
+
+      <div class="highlight">
+        🔬 <strong>Key Advantage:</strong> RNA-Seq detects both known and novel transcripts and can quantify expression over a broad dynamic range.
+      </div>
+
+      <h2>Steps Involved in RNA-Seq</h2>
+      <p><strong>1. RNA Extraction:</strong> Total RNA is isolated from the sample.</p>
+      <p><strong>2. Library Preparation:</strong> RNA is converted into cDNA and adapters are ligated for sequencing.</p>
+      <p><strong>3. Sequencing:</strong> Using NGS platforms such as Illumina, libraries are sequenced to generate short reads.</p>
+      <p><strong>4. Data Analysis:</strong> Reads are aligned to a reference genome or transcriptome. Expression quantification and differential expression analysis are performed.</p>
+
+      <img src="images/rna_seq_steps.png" alt="RNA-Seq Steps" class="blog-image" />
+
+      <h2>Applications of RNA-Seq</h2>
+      <p>
+        RNA-Seq is widely used in:
+      </p>
+      <ul>
+        <li>Gene expression profiling</li>
+        <li>Transcriptome annotation</li>
+        <li>Alternative splicing analysis</li>
+        <li>Fusion gene detection</li>
+        <li>Single-cell transcriptomics</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        RNA-Seq is an essential tool in functional genomics and systems biology. Its ability to reveal the complexity of gene expression and transcript diversity has made it invaluable for researchers in medicine, plant science, microbiology, and beyond.
+      </p>
+
+      <div class="highlight">
+        📘 Want to learn more? Follow our tutorials or check out our datasets section to practice RNA-Seq analysis hands-on!
+      </div>
+
+      <!-- Bottom Links -->
+      <div class="bottom-links">
+        <a href="../index.html">← Return to Home</a>
+        <a href="blog_crispr.html">Read Another Blog: CRISPR Explained →</a>
+      </div>
+
+      <div class="footer-note">
+        © 2025 Workline Bioinformatics. All rights reserved.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
