@@ -69,7 +69,7 @@
     <!-- Question 1 -->
     <section id="what-is-ngs">
       <h2>1. What is NGS Sequencing?</h2>
-      <p>Next-Generation Sequencing (NGS) is a technology that enables the rapid sequencing of large amounts of DNA or RNA by massively parallel sequencing—meaning millions or even billions of fragments are sequenced simultaneously. NGS is also referred to as high-throughput or massively-parallel sequencing[1][2][3].</p>
+      <p>Next-Generation Sequencing (NGS) is a technology that enables the rapid sequencing of large amounts of DNA or RNA by massively parallel sequencing—meaning millions or even billions of fragments are sequenced simultaneously. NGS is also referred to as high-throughput or massively-parallel sequencing[<a href="#ref1">1</a>][<a href="#ref2">2</a>][<a href="#ref3">3</a>].</p>
 
       <h3>Objective of NGS</h3>
       <p>The primary objective of NGS is to determine the exact sequence of nucleotides (A, T, C, G for DNA; A, U, C, G for RNA) in genetic material. It is used to:</p>
@@ -78,7 +78,7 @@
         <li>Identify pathogens</li>
         <li>Decode entire genomes</li>
         <li>Analyze gene expression</li>
-        <li>Understand genetic contributions to diseases[2][4][3]</li>
+        <li>Understand genetic contributions to diseases[<a href="#ref2">2</a>][<a href="#ref4">4</a>][<a href="#ref3">3</a>].</li>
       </ul>
 
       <h3>What is Analyzed with NGS?</h3>
@@ -86,7 +86,7 @@
         <li>Genomic DNA (entire genomes, specific regions, or genes).</li>
         <li>RNA (for transcriptome analysis, such as RNA-Seq).</li>
         <li>Microbial communities (metagenomics).</li>
-        <li>Genetic mutations and variants, including single nucleotide changes SNPs, insertions & deletions (indels), copy number variations (CNVs), and gene fusions[2][4][5][6]</li>
+        <li>Genetic mutations and variants, including single nucleotide changes SNPs, insertions & deletions (indels), copy number variations (CNVs), and gene fusions[<a href="#ref2">2</a>][<a href="#ref4">4</a>][<a href="#ref5">5</a>][<a href="#ref6">6</a>]</li>
       </ul>
 
       <h3>NGS Workflow Steps</h3>
@@ -97,24 +97,24 @@
         </tr>
         <tr>
           <td>1. Nucleic Acid Isolation</td>
-          <td>Extraction and purification of DNA or RNA from the sample. High yield and purity are crucial for accuracy[7][8]</td>
+          <td>Extraction and purification of DNA or RNA from the sample. High yield and purity are crucial for accuracy[<a href="#ref7">7</a>][<a href="#ref8">8</a>]</td>
         </tr>
         <tr>
           <td>2. Library Preparation</td>
-          <td>The DNA/RNA is fragmented, and specialized adapters (short DNA sequences) are attached to both ends. These adapters allow fragments to bind to sequencer surfaces and may include barcodes for sample identification[7][9][8]</td>
+          <td>The DNA/RNA is fragmented, and specialized adapters (short DNA sequences) are attached to both ends. These adapters allow fragments to bind to sequencer surfaces and may include barcodes for sample identification[<a href="#ref7">7</a>][<a href="#ref9">9</a>][<a href="#ref8">8</a>]</td>
         </tr>
         <tr>
           <td>3. Clonal Amplification & Sequencing</td>
-          <td>DNA fragments are amplified and immobilized on surfaces like beads or flow cells. The sequencer reads the sequence by detecting fluorescent signals as nucleotides are incorporated, determining the exact base order[7][10].</td>
+          <td>DNA fragments are amplified and immobilized on surfaces like beads or flow cells. The sequencer reads the sequence by detecting fluorescent signals as nucleotides are incorporated, determining the exact base order[<a href="#ref7">7</a>][<a href="#ref10">10</a>]</td>
         </tr>
         <tr>
           <td>4. Data Analysis</td>
-          <td>Bioinformatics tools process the data: aligning sequences to reference genomes, annotating variants, and interpreting the results to generate useful biological insights[7][6].</td>
+          <td>Bioinformatics tools process the data: aligning sequences to reference genomes, annotating variants, and interpreting the results to generate useful biological insights[<a href="#ref7">7</a>][<a href="#ref6">6</a>]</td>
         </tr>
       </table>
 
       <div class="highlight">
-        🎯 NGS sequencing is a transformative technology to rapidly read genetic information. It has revolutionized genomics research and modern medicine by providing highly accurate, large-scale genetic data for diagnostics, research, and understanding biological mechanisms[1][2][3].
+        🎯 NGS sequencing is a transformative technology to rapidly read genetic information. It has revolutionized genomics research and modern medicine by providing highly accurate, large-scale genetic data for diagnostics, research, and understanding biological mechanisms[<a href="#ref1">1</a>][<a href="#ref2">2</a>][<a href="#ref3">3</a>].
       </div>
     </section>
 
@@ -138,15 +138,15 @@
       <p>Typical Steps & Tools:</p>
       <ul>
         <li><strong>Quality Control(QC):</strong> Assess and improve read quality.</li>
-        <p>Tools: FastQC, fastp, MultiQC[11][12]</p>
+        <p>Tools: FastQC, fastp, MultiQC[<a href="#ref11">11</a>][<a href="#ref12">12</a>]</p>
         <li><strong>Filtering/Trimming:</strong> Remove low-quality reads and sequencing adapters.</li>
-        <p>Tools: Trimmomatic, Cutadapt, fastp[12]</p>
+        <p>Tools: Trimmomatic, Cutadapt, fastp[<a href="#ref12">12</a>]</p>
         <li><strong>Alignment/Mapping:</strong></li>
-        <p>Tools: BWA, Bowtie2, STAR (RNA-Seq), minimap2[11][12][13]</p>
+        <p>Tools: BWA, Bowtie2, STAR (RNA-Seq), minimap2[<a href="#ref11">11</a>][<a href="#ref12">12</a>][<a href="#ref13">13</a>]</p>
         <li><strong>BAM Processing:</strong> Sorting, indexing, marking PCR duplicates.</li>
-        <p>Tools: SAMtools, Picard, GATK MarkDuplicates[11][13]</p>
+        <p>Tools: SAMtools, Picard, GATK MarkDuplicates[<a href="#ref11">11</a>][<a href="#ref13">13</a>]</p>
         <li><strong>Variant Calling (for DNA):</strong> Identify variants (SNPs, indels, CNVs).</li>
-        <p>Tools: GATK HaplotypeCaller/Mutect2, Strelka2, VarScan, FreeBayes[11][14][13]</p>
+        <p>Tools: GATK HaplotypeCaller/Mutect2, Strelka2, VarScan, FreeBayes[<a href="#ref11">11</a>][<a href="#ref14">14</a>][<a href="#ref13">13</a>]</p>
         <li><strong>Transcript Quantification (for RNA):</strong> Count gene expression levels.</li>
         <p>Tools: featureCounts, HTSeq, Salmon, Kallisto</p>
       </ul>
@@ -156,9 +156,9 @@
       <p>Steps & Tools:</p>
       <ul>
         <li><strong>Variant Annotation:</strong> Add functional/clinical information to variants.</li>
-        <p>Tools: ANNOVAR, SnpEff, VEP[14][11]</p>
+        <p>Tools: ANNOVAR, SnpEff, VEP[<a href="#ref14">14</a>][<a href="#ref11">11</a>]</p>
         <li><strong>Data Visualization/Exploration: </strong> Generate plots, cluster analysis, PCA.</li>
-        <p>Tools: Integrative Genomics Viewer (IGV), R, Python (matplotlib, seaborn)[15]</p>
+        <p>Tools: Integrative Genomics Viewer (IGV), R, Python (matplotlib, seaborn)[<a href="#ref157">15</a>]</p>
         <li><strong>o	Specialized Analyses:</strong> Differential expression (RNA), metagenomic profiling, etc.</li>
         <p>Tools: DESeq12, EdgeR, MetaPhlAn.</p>
       </ul>
@@ -184,7 +184,7 @@
     <tr>
       <td>Alignment/Mapping</td>
       <td>Locate reads on reference</td>
-      <td>BWA, Bowtie2, STAR, minimap12</td>
+      <td>BWA, Bowtie2, STAR, minimap2</td>
     </tr>
     <tr>
       <td>BAM File Processing</td>
@@ -211,11 +211,11 @@
       <h3>Notes</h3>
       <li>Workflow and tools vary with analysis type (DNA, RNA, exome, metagenome, etc.).</li>
       <li>Platforms like Galaxy and BaseSpace allow GUI-based or cloud analysis.</li>
-      <li>Pipeline frameworks such as Nextflow or Snakemake help automate and scale analyses[16].</li>
+      <li>Pipeline frameworks such as Nextflow or Snakemake help automate and scale analyses[<a href="#ref16">16</a>].</li>
 
 
       <div class="highlight">
-        🛠️ In summary, NGS data analysis is a multi-stage process involving a range of bioinformatic tools—each dedicated to transforming raw sequencing output into biologically meaningful insights through quality control, sequence alignment, variant discovery, and data interpretation[17][11][12].
+        🛠️ In summary, NGS data analysis is a multi-stage process involving a range of bioinformatic tools—each dedicated to transforming raw sequencing output into biologically meaningful insights through quality control, sequence alignment, variant discovery, and data interpretation[<a href="#ref17">17</a>][<a href="#ref11">11</a>][<a href="#ref12">12</a>].
       </div>
     </section>
 
@@ -234,6 +234,29 @@
         💡 Bioinformatics enables genome reconstruction, sequence analysis, and full annotation after raw sequencing.
       </div>
     </section>
+    <!-- References Section -->
+<section id="references">
+  <h2>References</h2>
+  <ol>
+    <li id="ref1"><a href="https://www.illumina.com/science/technology/next-generation-sequencing.html" target="_blank">https://www.illumina.com/science/technology/next-generation-sequencing.html</a></li>
+    <li id="ref2"><a href="https://www.thermofisher.com/us/en/home/life-science/sequencing/sequencing-learning-center/next-generation-sequencing-information/ngs-basics/what-is-next-generation-sequencing.html" target="_blank">https://www.thermofisher.com/.../what-is-next-generation-sequencing.html</a></li>
+    <li id="ref3"><a href="https://microbenotes.com/next-generation-sequencing-ngs/" target="_blank">https://microbenotes.com/next-generation-sequencing-ngs/</a></li>
+    <li id="ref4"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3841808/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC3841808/</a></li>
+    <li id="ref5"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6528456/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC6528456/</a></li>
+    <li id="ref6"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9588890/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC9588890/</a></li>
+    <li id="ref7"><a href="https://www.aatbio.com/resources/faq-frequently-asked-questions/What-are-the-4-steps-of-next-generation-sequencing-NGS" target="_blank">https://www.aatbio.com/.../What-are-the-4-steps-of-next-generation-sequencing-NGS</a></li>
+    <li id="ref8"><a href="https://www.idtdna.com/pages/technology/next-generation-sequencing/workflow" target="_blank">https://www.idtdna.com/.../workflow</a></li>
+    <li id="ref9"><a href="https://sourcebioscience.com/what-are-the-four-steps-of-next-gen-sequencing/" target="_blank">https://sourcebioscience.com/.../what-are-the-four-steps-of-next-gen-sequencing/</a></li>
+    <li id="ref10"><a href="https://apacmed.org/next-generation-sequencing/" target="_blank">https://apacmed.org/next-generation-sequencing/</a></li>
+    <li id="ref11"><a href="https://www.linkedin.com/pulse/essential-bioinformatics-tools-ngs-data-analysis-koshechkin-phd-16c8ye" target="_blank">https://www.linkedin.com/.../essential-bioinformatics-tools-ngs-data-analysis</a></li>
+    <li id="ref12"><a href="https://www.celemics.com/resources/blogs/bioinformatics-standard-ngs-data-analysis-pipeline/" target="_blank">https://www.celemics.com/.../bioinformatics-standard-ngs-data-analysis-pipeline</a></li>
+    <li id="ref13"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC17011913149/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC17011913149/</a></li>
+    <li id="ref14"><a href="https://dromicslabs.com/next-generation-sequencing-data-analysis-tools-and-techniques/" target="_blank">https://dromicslabs.com/.../ngs-data-analysis-tools-and-techniques</a></li>
+    <li id="ref15"><a href="https://goldbio.com/articles/article/Four-Steps-for-NGS-Data-Analyses" target="_blank">https://goldbio.com/.../Four-Steps-for-NGS-Data-Analyses</a></li>
+    <li id="ref16"><a href="https://www.ecseq.com/support/ngs/getting-started-with-ngs-data-analysis-overview" target="_blank">https://www.ecseq.com/.../getting-started-with-ngs-data-analysis-overview</a></li>
+    <li id="ref17"><a href="https://www.thermofisher.com/us/en/home/life-science/cloning/cloning-learning-center/invitrogen-school-of-molecular-biology/next-generation-sequencing/ngs-data-analysis-illumina.html" target="_blank">https://www.thermofisher.com/.../ngs-data-analysis-illumina.html</a></li>
+  </ol>
+</section>
 
 <!-- Footer -->
   <footer class="footer-grid">
