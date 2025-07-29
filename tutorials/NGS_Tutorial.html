@@ -140,46 +140,57 @@
     gap: 8px;
   }
 
-  .footer-grid {
-    background-color: #1b1f31;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-  }
-
-  .footer-column h2, .footer-column a {
-    color: white;
-  }
-
-  .footer-bottom {
-    text-align: center;
-    background: #111827;
-    color: white;
-    padding: 12px;
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      padding: 25px;
-    }
-
-    h1 {
-      font-size: 2em;
-    }
-
-    .footer-grid {
-      flex-direction: column;
-      text-align: center;
-    }
-
     .video-container .watch-note {
       font-size: 0.8rem;
       top: 8px;
       left: 12px;
     }
   }
+    .footer-note {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bottom-links a {
+      text-decoration: none;
+      color: #0284c7;
+      font-weight: 600;
+      border: 1px solid #0284c7;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .bottom-links a:hover {
+      background-color: #0284c7;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      .blog-header h1 {
+        font-size: 2em;
+      }
+
+      .bottom-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
 </style>
 </head>
 <body>
