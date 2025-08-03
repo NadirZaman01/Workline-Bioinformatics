@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workline Bioinformatics | Tutorials</title>
+  <link rel="stylesheet" href="../style_final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    background: #f9f9fb;
+    color: #222;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .toc {
+    background: #f0f4ff;
+    padding: 20px;
+    border-left: 4px solid #1e3a8a;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+
+  .toc h3 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+  }
+
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .toc ul li {
+    margin-bottom: 8px;
+  }
+
+  .toc ul li a {
+    color: #0369a1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .toc ul li a:hover {
+    text-decoration: underline;
+  }
+
+  h1, h2, h3 {
+    color: #1b1f31;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 1.05em;
+  }
+
+  ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #f1f5f9;
+  }
+
+  .highlight {
+    background: #e0f2fe;
+    padding: 16px;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    margin: 30px 0;
+  }
+
+  .video-container {
+    position: relative;
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .video-container iframe {
+    width: 100%;
+    border: none;
+  }
+
+  .video-container .watch-note {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: rgba(255,255,255,0.85);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+    .video-container .watch-note {
+      font-size: 0.8rem;
+      top: 8px;
+      left: 12px;
+    }
+  }
+    .footer-note {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bottom-links a {
+      text-decoration: none;
+      color: #0284c7;
+      font-weight: 600;
+      border: 1px solid #0284c7;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .bottom-links a:hover {
+      background-color: #0284c7;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      .blog-header h1 {
+        font-size: 2em;
+      }
+
+      .bottom-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+  <div class="nav-flex">
+    <a href="index.html" class="logo">
+      <img src="../images/logo_transparent_1.png" alt="Workline Bioinformatics Logo">
+    </a>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About Us</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../tutorials.html">Tutorials</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h1>Beginner’s Guide to BLAST</h1>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h3>Jump to:</h3>
+    <ul>
+      <li><a href="#what-is-blast">1. What is BLAST and Why Is It Needed?</a></li>
+      <li><a href="#types-of-blast">2. Different Types of BLAST</a></li>
+      <li><a href="#blast-platforms">3. Popular Platforms Offering BLAST</a></li>
+      <li><a href="#interpreting-blast">4. Interpreting BLAST Results</a></li>
+    </ul>
+  </div>
+  <div class="video-container" style="position: relative; margin: 2rem 0; text-align: center;">
+  <!-- YouTube Video -->
+  <iframe width="100%" height="480" 
+    src="https://www.youtube.com/embed/YQ2whOBpNEg" 
+    title="NGS Overview" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+
+  <!-- Pointer Note -->
+  <div style="
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: rgba(255,255,255,0.85);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    👉 Watch full tutorial here
+  </div>
+</div>
+  <!-- Section 1 -->
+  <section id="what-is-blast">
+    <h2>1. What is BLAST and Why Is It Needed?</h2>
+    <p>BLAST (Basic Local Alignment Search Tool) is a powerful and widely used bioinformatics program that allows users to compare a nucleotide (DNA/RNA) or protein sequence—the query—against databases of known sequences[<a href="#ref1">1</a>][<a href="#ref2">2</a>][<a href="#ref3">3</a>]. The primary purpose is to identify regions of local similarity, which can provide insight into gene or protein function, structure, and evolutionary relationships[<a href="#ref1">1</a>][<a href="#ref3">3</a>][<a href="#ref4">4</a>].</p>
+
+    <p>For example, if you sequence a novel gene or protein and want to learn more about its possible function or origin, BLAST helps by:</p>
+    <ul>
+      <li>Identifying closely related known sequences</li>
+      <li>Analyzing evolutionary relationships and taxonomy</li>
+      <li>Locating protein domains and mapping genes</li>
+      <li>Aiding in species identification and DNA mapping</li>
+    </ul>
+
+    <div class="highlight">
+      🧬 “BLAST is an algorithm that uses heuristic methods to find regions of local similarity between biological sequences, thereby enabling comparisons with sequence databases.”[<a href="#ref5">5</a>]
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="types-of-blast">
+    <h2>2. Different Types of BLAST</h2>
+    <p>There are several BLAST programs, each suited to different types of queries and databases. Here’s a summary of the main BLAST types[<a href="#ref3">3</a>][<a href="#ref6">6</a>][<a href="#ref7">7</a>]:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Query</th>
+          <th>Database</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>blastn</td><td>Nucleotide</td><td>Nucleotide</td><td>Finds similar DNA/RNA sequences</td></tr>
+        <tr><td>blastp</td><td>Protein</td><td>Protein</td><td>Compares protein sequences</td></tr>
+        <tr><td>blastx</td><td>Nucleotide (translated)</td><td>Protein</td><td>Translates DNA sequence (6 frames) and searches protein matches</td></tr>
+        <tr><td>tblastn</td><td>Protein</td><td>Nucleotide (translated)</td><td>Compares protein against a translated DNA database</td></tr>
+        <tr><td>tblastx</td><td>Nucleotide (translated)</td><td>Nucleotide (translated)</td><td>Compares protein-coding potential of novel DNA</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Use Cases:</strong></p>
+    <ul>
+      <li><strong>blastn</strong> is used for identifying sequence similarity between DNA/RNA sequences and is vital for evolutionary analysis.</li>
+      <li><strong>blastp</strong> compares amino acid sequences of proteins.</li>
+      <li><strong>blastx</strong> helps when you suspect a coding region in your DNA but are unsure of the reading frame.</li>
+      <li><strong>tblastn</strong> allows you to find possible coding regions for a protein in nucleotide data.</li>
+      <li><strong>tblastx</strong> is useful when comparing potentially protein-coding regions in novel DNA against other species[<a href="#ref6">6</a>][<a href="#ref3">3</a>].</li>
+    </ul>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="blast-platforms">
+    <h2>3. Popular Platforms Offering BLAST</h2>
+
+    <h3>🔹 NCBI BLAST (Web Version)</h3>
+    <p><strong>Website:</strong> <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">NCBI BLAST web tool[<a href="#ref8">8</a>]</a></p>
+    <p>Use by selecting the appropriate program (e.g., <code>blastn</code>, <code>blastp</code>) and submitting a FASTA sequence. You can compare against databases like <code>nr</code>, <code>refseq</code>, or <code>swissprot</code>.</p>
+    <p><strong>Important output metrics:</strong></p>
+    <ul>
+      <li><strong>Max/Bit Score</strong>: Strength of match</li>
+      <li><strong>% Identity</strong>: Similarity of query to a hit i.e. a database entry</li>
+      <li><strong>E-value</strong>: Statistical significance (lower is better)</li>
+    </ul>
+    <p>Applications: Identifying gene/protein functions, finding homologs, and exploring evolutionary relationships[<a href="#ref1">1</a>][<a href="#ref8">8</a>][<a href="#ref3">3</a>][1][8][3].</p>
+
+    <h3>🔹 BLAST+ (Command Line Tool)</h3>
+    <p>Suitable for large-scale, high-throughput or automated sequence analyses. BLAST+ provides a suite of command-line tools that can be run locally. This is essential for:</p>
+    <ul>
+      <li>Analyses involving proprietary or large datasets.</li>
+      <li>Integrating BLAST searches into bioinformatics workflows.</li>
+      <li>No dependency on internet access</li>
+    </ul>
+    <p>Installers and databases can be downloaded from NCBI, and tools are supported across different platforms. BLAST+ offers flexibility, database management, and can run without the restrictions of the web version[<a href="#ref9">9</a>][<a href="#ref10">10</a>][<a href="#ref11">11</a>][9][10][11].</p>
+    <h3>🔹 EBI BLAST (European Bioinformatics Institute)</h3>
+    <p><strong>Website:</strong> <a href="https://www.ebi.ac.uk/jdispatcher/sss/ncbiblast" target="_blank">EBI BLAST</a></p>
+    <p>The EMBL-EBI also provides web interfaces to BLAST and related tools, supporting nucleotide and protein alignments with direct integration to many European sequence databases[<a href="#ref12">12</a>][<a href="#ref13">13</a>][12][13].</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="interpreting-blast">
+    <h2>4. Interpreting BLAST Results</h2>
+    <p>When you run BLAST, the output is typically broken down into:</p>
+    <ul>
+      <li><strong>Graphical overview</strong> of alignment regions</li>
+      <li><strong>Ranked list</strong> of hits with statistics</li>
+      <li><strong>Detailed sequence alignments</strong></li>
+    </ul>
+
+    <p><strong>Key Metrics:</strong></p>
+    <ul>
+      <li><strong>Score/Bit score</strong>: Reflects alignment strength—the higher, the better[<a href="#ref1">1</a>][<a href="#ref3">3</a>][1][3].</li>
+      <li><strong>E-value</strong>: Represents the number of expected hits by chance—a lower E-value means greater significance.</li>
+      <li><strong>% Identity</strong>: Indicates the degree of similarity between query and database hit.</li>
+    </ul>
+
+    <div class="highlight">
+      📊 BLAST results help identify homologous sequences, trace evolutionary history, and locate conserved domains across species.
+    </div>
+  </section>
+
+  <!-- References -->
+  <section id="references">
+    <h2>References</h2>
+    <ol>
+      <li id="ref1"><a href="https://www.ncbi.nlm.nih.gov/books/NBK1734/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK1734/</a></li>
+      <li id="ref2"><a href="https://microbenotes.com/blast-bioinformatics/" target="_blank">https://microbenotes.com/blast-bioinformatics/"</a></li>
+      <li id="ref3"><a href="https://en.wikipedia.org/wiki/BLAST_(biotechnology)" target="_blank">https://en.wikipedia.org/wiki/BLAST_(biotechnology)</a></li>
+      <li id="ref4"><a href="https://www.ccg.unam.mx/~vinuesa/tlem/pdfs/Bioinformatics_explained_BLAST.pdf" target="_blank">https://www.ccg.unam.mx/~vinuesa/tlem/pdfs/Bioinformatics_explained_BLAST.pdf</a></li>
+      <li id="ref5"><a href="https://llri.in/what-is-blast-in-bioinformatics-definition/" target="_blank">https://llri.in/what-is-blast-in-bioinformatics-definition/</a></li>
+      <li id="ref6"><a href="https://www.slideshare.net/slideshow/blast-features-types-algorithm-working-etc/267936512" target="_blank">https://www.slideshare.net/slideshow/blast-features-types-algorithm-working-etc/267936512</a></li>
+      <li id="ref7"><a href="https://blast.ncbi.nlm.nih.gov/BLAST_guide.pdf" target="_blank">https://blast.ncbi.nlm.nih.gov/BLAST_guide.pdf</a></li>
+      <li id="ref8"><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">https://blast.ncbi.nlm.nih.gov/Blast.cgi</a></li>
+      <li id="ref9"><a href="https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html" target="_blank">https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html</a></li>
+      <li id="ref10"><a href="https://www.ncbi.nlm.nih.gov/books/NBK279690/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK279690/</a></li>
+      <li id="ref11"><a href="https://www.ncbi.nlm.nih.gov/books/NBK569856/" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK569856/</a></li>
+      <li id="ref12"><a href="https://www.ebi.ac.uk/jdispatcher/sss/psiblast" target="_blank">https://www.ebi.ac.uk/jdispatcher/sss/psiblast</a></li>
+      <li id="ref13"><a href="https://www.ebi.ac.uk/jdispatcher/sss/ncbiblast" target="_blank">https://www.ebi.ac.uk/jdispatcher/sss/ncbiblast</a></li>
+      <li id="ref14"><a href="https://biochem.slu.edu/bchm628/handouts/2013/4_BlastTutorial_2013.pdf" target="_blank">https://biochem.slu.edu/bchm628/handouts/2013/4_BlastTutorial_2013.pdf</a></li>
+    </ol>
+  </section>
+</div>
+<!-- Bottom Links -->
+      <div class="bottom-links">
+        <a href="../index.html">← Return to Home</a>
+        <a href="molecular_docking.html">Go to Another Tutorial: Molecular Docking →</a>
+      </div>
+
+      <div class="footer-note">
+        © 2025 Workline Bioinformatics. All rights reserved.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+</body>
+</html>
