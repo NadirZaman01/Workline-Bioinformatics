@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workline Bioinformatics | Tutorials</title>
+  <link rel="stylesheet" href="../style_final.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    background: #f9f9fb;
+    color: #222;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .toc {
+    background: #f0f4ff;
+    padding: 20px;
+    border-left: 4px solid #1e3a8a;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+
+  .toc h3 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+  }
+
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .toc ul li {
+    margin-bottom: 8px;
+  }
+
+  .toc ul li a {
+    color: #0369a1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .toc ul li a:hover {
+    text-decoration: underline;
+  }
+
+  h1, h2, h3 {
+    color: #1b1f31;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    font-size: 1.05em;
+  }
+
+  ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #f1f5f9;
+  }
+
+  .highlight {
+    background: #e0f2fe;
+    padding: 16px;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    margin: 30px 0;
+  }
+
+  .video-container {
+    position: relative;
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .video-container iframe {
+    width: 100%;
+    border: none;
+  }
+
+  .video-container .watch-note {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: rgba(255,255,255,0.85);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+    .video-container .watch-note {
+      font-size: 0.8rem;
+      top: 8px;
+      left: 12px;
+    }
+  }
+    .footer-note {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bottom-links a {
+      text-decoration: none;
+      color: #0284c7;
+      font-weight: 600;
+      border: 1px solid #0284c7;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .bottom-links a:hover {
+      background-color: #0284c7;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      .blog-header h1 {
+        font-size: 2em;
+      }
+
+      .bottom-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+  <div class="nav-flex">
+    <a href="../index.html" class="logo">
+      <img src="../images/logo_transparent_1.png" alt="Workline Bioinformatics Logo">
+    </a>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About Us</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../tutorials.html">Tutorials</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <h1>Sequence Alignment:</h1>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <h3>Jump to:</h3>
+      <ul>
+  <li><a href="#intro-alignment">1. Introduction to Sequence Alignment</a></li> 
+  <li><a href="#pairwise-alignment">2. Method 1: Pairwise Sequence Alignment</a></li>
+  <li><a href="#msa">3. Method 2: Multiple Sequence Alignment (MSA)</a></li>
+  <li><a href="#advanced-topics">4. Advanced Topics in Sequence Alignment</a></li>
+  <li><a href="#fun-facts">5. Fun Facts About Sequence Alignment</a></li>
+      </ul>
+    </div>
+<div class="video-container" style="position: relative; margin: 2rem 0; text-align: center;">
+  <!-- YouTube Video -->
+  <iframe width="100%" height="480" 
+    src="https://www.youtube.com/embed/YQ2whOBpNEg" 
+    title="NGS Overview" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+
+  <!-- Pointer Note -->
+  <div style="
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: rgba(255,255,255,0.85);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #0077cc;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    👉 Watch full tutorial here
+  </div>
+</div>
+        <section id="intro-alignment">
+
+<h2>1. Introduction to Sequence Alignment</h2>
+<p>Sequence alignment is like solving a puzzle where you try to match similar pieces (sequences) to find patterns, similarities, or differences. It’s a fundamental tool in bioinformatics used to compare DNA, RNA, or protein sequences to understand their relationships, functions, and evolution.[<a href="#ref11">1</a>]</p>
+            
+            <h3>1.1 History of Sequence Alignment</h3>
+            <ul>
+                <strong>1960s-1970s:</strong> The concept of sequence alignment emerged with the rise of molecular biology. Scientists needed a way to compare sequences to study evolution and function.<br>
+                <strong>1970:</strong> Needleman and Wunsch published the first dynamic programming algorithm for global sequence alignment.[<a href="#ref11">2</a>]<br>
+                <strong>1981:</strong> Smith and Waterman introduced the local alignment algorithm, which became a game-changer for identifying conserved regions.[<a href="#ref3">3</a>]<br>
+                <strong>1990s-Present:</strong> With the advent of high-throughput sequencing, sequence alignment tools evolved to handle massive datasets, leading to tools like BLAST, ClustalW, and MUSCLE.<br>
+            </ul>
+            <h3>1.2 Types of Sequence Alignment</h3>
+            <p>
+                Sequence alignment comes in different forms. <strong>Global alignment</strong> compares entire sequences, best for sequences of similar length, while <strong>local alignment</strong> focuses on the most similar regions, ideal for partial similarities. Additionally, <strong>pairwise alignment</strong> compares two sequences, and <strong>multiple sequence alignment (MSA)</strong> compares three or more sequences to find conserved regions.
+            </p>
+            <h3>1.3 Tools for Sequence Alignment</h3>
+            <ul>
+                  <strong>BLAST :</strong> Popular for comparing a query sequence to a database.<br>
+                  <strong>ClustalW :</strong> Great for multiple sequence alignment.<br>
+                  <strong>MUSCLE :</strong> Known for speed and accuracy in MSA.<br>
+                  <strong>MAFFT :</strong> Ideal for large datasets in MSA.<br>
+                  <strong>DIALIGN :</strong> Used for local alignment in distantly related sequences.<br>
+            </ul>
+         </section>
+         <section id="pairwise-alignment">
+            <h2>2. Method 1: Pairwise Sequence Alignment</h2>
+            <p>Pairwise alignment is the simplest form, where two sequences are compared to find the best possible match.</p>
+            <h3>2.1 Steps in Pairwise Alignment</h3>
+            <ul>
+                   <strong>1. Input Sequences:</strong> Provide two sequences (e.g., DNA, RNA, or protein).<br>
+                   <strong>2. Scoring System:</strong>  Assign scores for matches, mismatches, and gaps.
+                       <strong>Match:</strong> +1 (or higher for similar amino acids in proteins).<br>
+                       <strong>Mismatch:</strong> -1 (or lower for dissimilar amino acids).<br>
+                      <strong>Gap:</strong> -2 (penalty for introducing a gap).<br>
+                   <strong>3. Alignment Matrix:</strong> Create a matrix to compare the sequences.<br>
+                   <strong>4. Traceback:</strong>Find the optimal path through the matrix to generate the alignment.<br>
+             </ul> 
+          <section id="msa">     
+            <h2>3. Method 2: Multiple Sequence Alignment (MSA)</h2>
+            <p>MSA is used to align three or more sequences simultaneously. It’s essential for identifying conserved regions, phylogenetic analysis, and protein structure prediction.</p>
+            
+             <h2>3.1. Steps in MSA</h2>
+             <ul>
+                 <strong>1. Input Sequences:</strong> Provide multiple sequences in FASTA format.<br>
+                 <strong>2. Progressive Alignment:</strong> Align the most similar sequences first, then add less similar ones.<br>
+                 <strong>3. Refinement:</strong> Iteratively improve the alignment to maximize accuracy.<br>
+             </ul>
+          </section>
+          <section id="advanced-topics">
+             <h2>4. Advanced Topics in Sequence Alignment</h2>
+
+                <h3>4.1. Heuristic Methods</h3>
+                <ul>
+                    <strong>BLAST:</strong> Uses heuristics to quickly find similar sequences in large databases.[<a href="#ref4">4</a>]<br>
+                </ul>
+
+                <h3>4.2. Challenges in Sequence Alignment</h3>
+                <ul>
+                    <strong>Computational Complexity:</strong> Aligning large sequences or datasets can be resource-intensive.<br>
+                    <strong>Gap Penalties:</strong> Choosing the right gap penalty is crucial for accurate alignment.<br>
+                    <strong>Biological Relevance:</strong> Alignments must reflect biological reality, not just mathematical optimization.<br>
+                </ul>
+
+            <h3>4.3. Applications of Sequence Alignment</h3>
+                <ul>
+                    <strong>Evolutionary Studies:</strong> Identify homologous sequences and construct phylogenetic trees.<br>
+                    <strong>Gene Prediction:</strong> Find coding regions in DNA sequences.<br>
+                    <strong>Drug Discovery:</strong> Compare protein structures to design drugs.<br>
+                    <strong>Disease Diagnosis:</strong> Identify mutations linked to diseases.<br>
+                 </ul>  
+            </section>
+            <section id="fun-facts"> 
+            <h2>5. Fun Facts About Sequence Alignment</h2>
+                <ul>
+                1. The human genome is 3 billion base pairs long, and aligning it with other species’ genomes requires powerful algorithms!<br>
+                2. Sequence alignment helped scientists discover that humans share 98% of their DNA with chimpanzees.<br>
+                3. The Smith-Waterman algorithm is named after Temple Smith and Michael Waterman, who developed it while working on protein sequences.<br>
+                </ul>
+            </section>
+
+   <h2>References</h2>
+  <ol>
+    <li id="ref1"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4360475/" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4360475/</a></li>
+    <li id="ref2"><a href="https://doi.org/10.1016/0022-2836(70)90057-4" target="_blank">https://doi.org/10.1016/0022-2836(70)90057-4</a></li>
+    <li id="ref3"><a href="https://doi.org/10.1007/BF02710453" target="_blank">https://doi.org/10.1007/BF02710453</a></li>
+    <li id="ref4"><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ" target="_blank">https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ</a></li>
+  </ol>
+</section>
+<!-- Bottom Links -->
+      <div class="bottom-links">
+        <a href="../index.html">← Return to Home</a>
+        <a href="molecular_docking.html">Go to Another Tutorial: Molecular Docking →</a>
+      </div>
+
+      <div class="footer-note">
+        © 2025 Workline Bioinformatics. All rights reserved.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+</body>
+</html>
