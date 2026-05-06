@@ -159,15 +159,28 @@ nav a:hover {
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
     }
 
-/* Existing card styling modified for relative positioning */
+.testimonial-wrapper {
+  overflow: hidden; /* This hides the cards that aren't active */
+  width: 100%;
+  position: relative;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: nowrap; /* Forces all cards into a single horizontal row */
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
 .testimonial-card {
   background: #e0f7fa;
-  padding: 2.5rem 2rem 2rem; /* Increased top padding to accommodate the badge */
+  padding: 2.5rem 2rem 2rem;
   border-radius: 12px;
-  flex: 0 0 100%;
+  flex: 0 0 100%; /* Forces each card to be exactly the width of the screen */
+  box-sizing: border-box; /* Ensures padding doesn't push the width past 100% */
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative; /* Added to keep badges positioned correctly */
+  position: relative;
 }
 
 /* New Platform Badge Styling */
