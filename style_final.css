@@ -159,29 +159,30 @@ nav a:hover {
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
     }
 
-/* --- TESTIMONIAL SLIDER STYLES (Line 115 - 173) --- */
 .testimonial-wrapper {
-  overflow: hidden; /* Hides the cards that are off-screen */
+  overflow: hidden; 
   width: 100%;
   position: relative;
 }
 
 .testimonial-container {
-  display: flex;
-  flex-wrap: nowrap; /* Forces all cards into a single horizontal row */
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother sliding */
+  display: flex !important; /* Force flexbox */
+  flex-direction: row;      /* Ensure they stay in a line */
+  flex-wrap: nowrap;        /* Prevent them from jumping to the next line */
+  transition: transform 0.6s ease;
   width: 100%;
 }
 
 .testimonial-card {
   background: #e0f7fa;
-  padding: 3rem 2rem 2.5rem; /* Space for the badge at the top */
+  padding: 3rem 2rem 2.5rem;
   border-radius: 12px;
-  flex: 0 0 100%; /* Each card takes exactly 100% of the parent width */
-  box-sizing: border-box; /* Includes padding in the 100% width calculation */
+  flex: 0 0 100%;           /* Force each card to be exactly 100% width */
+  max-width: 100%;          /* Double-check it doesn't expand */
+  box-sizing: border-box; 
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative; /* Essential for the absolute platform-badge */
+  position: relative;
 }
 
 /* Platform Badge Styling */
