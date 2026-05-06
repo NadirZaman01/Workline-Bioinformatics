@@ -159,51 +159,48 @@ nav a:hover {
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
     }
 
-    .testimonial-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
+/* Existing card styling modified for relative positioning */
+.testimonial-card {
+  background: #e0f7fa;
+  padding: 2.5rem 2rem 2rem; /* Increased top padding to accommodate the badge */
+  border-radius: 12px;
+  flex: 0 0 100%;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative; /* Added to keep badges positioned correctly */
+}
 
-    .testimonial-container {
-      display: flex;
-      transition: transform 0.6s ease;
-      touch-action: pan-x;
-      width: 100%;
-    }
+/* New Platform Badge Styling */
+.platform-badge {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-    .testimonial-card {
-      background: #e0f7fa;
-      padding: 2rem;
-      border-radius: 12px;
-      flex: 0 0 100%;
-      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+/* Platform Specific Colors */
+.upwork {
+  background-color: #14a800; /* Official Upwork Green */
+  color: #ffffff;
+}
 
-    .stars {
-      color: gold;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-    }
+.freelancer {
+  background-color: #0087e0; /* Official Freelancer Blue */
+  color: #ffffff;
+}
 
-    .testimonial-nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1.5rem;
-    }
-
-    .testimonial-nav button {
-      background: none;
-      border: none;
-      font-size: 2.5rem;
-      cursor: pointer;
-      color: var(--primary);
-      transition: color 0.3s;
-    }
-
-    .testimonial-nav button:hover {
-      color: #00796b;
-    }
+/* Adjusting the star margin to avoid overlapping with badge */
+.stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+}
 
     .about, .contact, .cta, .faq {
       text-align: center;
