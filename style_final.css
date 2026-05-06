@@ -159,8 +159,9 @@ nav a:hover {
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
     }
 
+/* --- TESTIMONIAL SLIDER STYLES (Line 115 - 173) --- */
 .testimonial-wrapper {
-  overflow: hidden; /* This hides the cards that aren't active */
+  overflow: hidden; /* Hides the cards that are off-screen */
   width: 100%;
   position: relative;
 }
@@ -168,22 +169,22 @@ nav a:hover {
 .testimonial-container {
   display: flex;
   flex-wrap: nowrap; /* Forces all cards into a single horizontal row */
-  transition: transform 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother sliding */
   width: 100%;
 }
 
 .testimonial-card {
   background: #e0f7fa;
-  padding: 2.5rem 2rem 2rem;
+  padding: 3rem 2rem 2.5rem; /* Space for the badge at the top */
   border-radius: 12px;
-  flex: 0 0 100%; /* Forces each card to be exactly the width of the screen */
-  box-sizing: border-box; /* Ensures padding doesn't push the width past 100% */
+  flex: 0 0 100%; /* Each card takes exactly 100% of the parent width */
+  box-sizing: border-box; /* Includes padding in the 100% width calculation */
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative;
+  position: relative; /* Essential for the absolute platform-badge */
 }
 
-/* New Platform Badge Styling */
+/* Platform Badge Styling */
 .platform-badge {
   position: absolute;
   top: 15px;
@@ -194,10 +195,9 @@ nav a:hover {
   padding: 4px 12px;
   border-radius: 20px;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Platform Specific Colors */
 .upwork {
   background-color: #14a800; /* Official Upwork Green */
   color: #ffffff;
@@ -208,11 +208,29 @@ nav a:hover {
   color: #ffffff;
 }
 
-/* Adjusting the star margin to avoid overlapping with badge */
 .stars {
   color: gold;
   font-size: 1.2rem;
   margin: 1rem 0 0.5rem;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.testimonial-nav button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--primary);
+  transition: opacity 0.3s;
+}
+
+.testimonial-nav button:hover {
+  opacity: 0.7;
 }
 
     .about, .contact, .cta, .faq {
