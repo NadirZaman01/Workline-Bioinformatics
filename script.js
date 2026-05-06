@@ -10,17 +10,60 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.section').forEach(section => observer.observe(section));
 
-// Testimonial slider logic
+// 2. Enhanced Testimonial Slider Logic (Auto-slide + Hover Pause)
 const slider = document.getElementById('testimonialSlider');
 const testimonials = document.querySelectorAll('.testimonial-card');
+const nextBtn = document.getElementById('nextTestimonial');
+const prevBtn = document.getElementById('prevTestimonial');
+const wrapper = document.querySelector('.testimonial-wrapper');
+
 let index = 0;
+let slideInterval;
 
-document.getElementById('prevTestimonial').onclick = () => {
-  index = (index - 1 + testimonials.length) % testimonials.length;
+// Function to move the slider
+function updateSlider() {
   slider.style.transform = `translateX(-${index * 100}%)`;
-};
+}
 
-document.getElementById('nextTestimonial').onclick = () => {
+// Function for next slide
+function nextSlide() {
   index = (index + 1) % testimonials.length;
-  slider.style.transform = `translateX(-${index * 100}%)`;
+  updateSlider();
+}
+
+// Function for previous slide
+function prevSlide() {
+  index = (index - 1 + testimonials.length) % testimonials.length;
+  updateSlider();
+}
+
+// Start automatic sliding every 4 seconds
+function startAutoSlide() {
+  stopAutoSlide(); // Clear any existing intervals first
+  slideInterval = setInterval(nextSlide, 4000); 
+}
+
+// Stop automatic sliding
+function stopAutoSlide() {
+  clearInterval(slideInterval);
+}
+
+// --- Event Listeners ---
+
+// Manual navigation via buttons
+nextBtn.onclick = () => {
+  nextSlide();
+  startAutoSlide(); // Reset timer after manual click
 };
+
+prevBtn.onclick = () => {
+  prevSlide();
+  startAutoSlide(); // Reset timer after manual click
+};
+
+// Pause slider when mouse enters, resume when it leaves
+wrapper.addEventListener('mouseenter', stopAutoSlide);
+wrapper.addEventListener('mouseleave', startAutoSlide);
+
+// Initialize the auto-slider on page load
+startAutoSlide();
