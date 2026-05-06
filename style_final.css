@@ -159,6 +159,7 @@ nav a:hover {
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
     }
 
+/* Ensure this starts around Line 115 */
 .testimonial-wrapper {
   overflow: hidden; 
   width: 100%;
@@ -166,10 +167,10 @@ nav a:hover {
 }
 
 .testimonial-container {
-  display: flex !important; /* Force flexbox */
-  flex-direction: row;      /* Ensure they stay in a line */
-  flex-wrap: nowrap;        /* Prevent them from jumping to the next line */
-  transition: transform 0.6s ease;
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap; /* CRITICAL: Prevents vertical stacking */
+  transition: transform 0.6s ease-in-out;
   width: 100%;
 }
 
@@ -177,8 +178,7 @@ nav a:hover {
   background: #e0f7fa;
   padding: 3rem 2rem 2.5rem;
   border-radius: 12px;
-  flex: 0 0 100%;           /* Force each card to be exactly 100% width */
-  max-width: 100%;          /* Double-check it doesn't expand */
+  flex: 0 0 100%; /* Forces each card to be full width */
   box-sizing: border-box; 
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
   text-align: center;
